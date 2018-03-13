@@ -1,2 +1,9 @@
-<input ngCurrencyFormatter>
+<form #form="ngForm">
+  <input name="value" ngCurrencyFormatter [ngModel]="value">
+  <button type="button" (click)="handleSubmit(form.value)">Speichern</button>
+</form>
+
+<pre>{{ value }}</pre>
+<pre>{{ form.value | json  }}</pre>
+
 

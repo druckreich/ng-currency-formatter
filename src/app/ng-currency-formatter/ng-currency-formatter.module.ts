@@ -1,16 +1,19 @@
+import {CommonModule, CurrencyPipe} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {NgCurrencyFormatterComponent} from './ng-currency-formatter.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   declarations: [
     NgCurrencyFormatterComponent
   ],
   exports: [
     NgCurrencyFormatterComponent
+  ],
+  providers: [
+    CurrencyPipe
   ]
 })
 export class NgCurrencyFormatterModule {
