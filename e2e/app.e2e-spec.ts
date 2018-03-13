@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('ngx-curreny-formatter App', () => {
+describe('ng-currency-formatter App', () => {
   let page: AppPage;
 
   beforeEach(() => {
