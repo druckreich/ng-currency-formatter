@@ -4,12 +4,14 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {NgxCurrencyFormatterDirective} from './ngx-currency-formatter.directive';
+import { NgCurrencyFormatterComponent } from './ng-currency-formatter/ng-currency-formatter.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgxCurrencyFormatterDirective
+    NgxCurrencyFormatterDirective,
+    NgCurrencyFormatterComponent
   ],
   imports: [
     BrowserModule
