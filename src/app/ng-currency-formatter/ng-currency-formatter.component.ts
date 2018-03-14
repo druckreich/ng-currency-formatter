@@ -31,7 +31,7 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
   private onChange: any;
   private onTouched: any;
 
-  private value: number;
+  private value: any;
 
   constructor(private elementRef: ElementRef, private currencyPipe: CurrencyPipe) {
   }
@@ -75,7 +75,7 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
   }
 
   transformValue() {
-    if (this.value && this.isNumeric(this.value)) {
+    if (this.value != null && this.value !== '' && this.isNumeric(this.value)) {
       this.elementRef.nativeElement.value = this.currencyPipe.transform(this.value, this.code, 'symbol', this.digit);
     } else {
       this.resetValue();
@@ -87,8 +87,6 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
       this.elementRef.nativeElement.value = this.value;
     }
   }
-
-  replace
 
   isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);

@@ -6,11 +6,11 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  value = 200;
+  value = 0;
 
   ngOnInit() {
     setTimeout(() => {
-      this.value = 300
+      this.value = 0;
     }, 500);
   }
 
