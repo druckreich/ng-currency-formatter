@@ -1,5 +1,5 @@
 <form #form="ngForm">
-  <input type="text" name="value" ngCurrencyFormatter [ngModel]="value">
+  <input type="text" name="value" ngCurrencyFormatter [code]="'US'" [digit]="'1.4'" [ngModel]="value">
   <button type="button" (click)="handleSubmit(form.value)">Speichern</button>
 </form>
 

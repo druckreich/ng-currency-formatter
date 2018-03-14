@@ -16,9 +16,6 @@ export const CURRENCY_FORMATTER__VALUE_ACCESSOR: any = {
 })
 export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnInit {
 
-  // https://angular.io/api/common/CurrencyPipe
-  // ...
-  // currencyCode is the ISO 4217 currency code, such as USD for the US dollar and EUR for the euro.
   @Input()
   code = 'EUR';
 
@@ -83,9 +80,7 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
   }
 
   resetValue() {
-    if (this.value) {
-      this.elementRef.nativeElement.value = this.value;
-    }
+    this.elementRef.nativeElement.value = this.value;
   }
 
   isNumeric(n) {
