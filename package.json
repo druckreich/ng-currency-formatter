@@ -47,7 +47,14 @@
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
   },
-  "author": "stefan.martinek@gmail.com"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/druckreich/ng-currency-formatter"
+  },
+  "author": {
+    "name": "Stefan Martinek",
+    "email": "stefan.martinek@gmail.at"
+  },
 
 
 }
