@@ -1,5 +1,5 @@
 import {CurrencyPipe} from '@angular/common';
-import {Component, OnInit, forwardRef, ElementRef, HostListener} from '@angular/core';
+import {Component, ElementRef, forwardRef, HostListener, Input, OnInit} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 export const CURRENCY_FORMATTER__VALUE_ACCESSOR: any = {
@@ -15,6 +15,18 @@ export const CURRENCY_FORMATTER__VALUE_ACCESSOR: any = {
   providers: [CURRENCY_FORMATTER__VALUE_ACCESSOR]
 })
 export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnInit {
+
+  // https://angular.io/api/common/CurrencyPipe
+  // ...
+  // currencyCode is the ISO 4217 currency code, such as USD for the US dollar and EUR for the euro.
+  @Input()
+  code = 'EUR';
+
+  @Input()
+  digit = '1.2';
+
+  thousandsSeperator = '.';
+  decimalSeperator = ',';
 
   private onChange: any;
   private onTouched: any;
@@ -47,7 +59,7 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
 
   @HostListener('keyup', ['$event'])
   handleKeyup($event) {
-    const value: number = $event.target.value;
+    const value: number = $event.target.value.replace(this.decimalSeperator, this.thousandsSeperator);
     this.value = value;
     this.onChange(value);
   }
@@ -64,7 +76,7 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
 
   transformValue() {
     if (this.value && this.isNumeric(this.value)) {
-      this.elementRef.nativeElement.value = this.currencyPipe.transform(this.value);
+      this.elementRef.nativeElement.value = this.currencyPipe.transform(this.value, this.code, 'symbol', this.digit);
     } else {
       this.resetValue();
     }
@@ -75,6 +87,8 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
       this.elementRef.nativeElement.value = this.value;
     }
   }
+
+  replace
 
   isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
