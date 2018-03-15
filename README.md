@@ -6,6 +6,9 @@ It does accept the options code and digit which are passed throught to the durre
 properties.
   
 
+### Demo 
+https://stackblitz.com/edit/ng-currency-formatter
+
 ## How to Use
 
 ##### Step 1 - npm install
