@@ -2,6 +2,9 @@
 
 This library was generated using @angular/cli and ng-packagr.
 
+### Demo 
+https://stackblitz.com/edit/ng-currency-formatter
+
 ## How to Use
 
 ##### Step 1 - npm install
