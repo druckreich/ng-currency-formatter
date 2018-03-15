@@ -1,6 +1,10 @@
 # NgxCurrenyFormatter
 
-This library was generated using @angular/cli and ng-packagr.
+I made this library because i needed a component (as simple as possible) that just renders the 
+value in my input field as if it was piped through the currency pipe.
+It does accept the options code and digit which are passed throught to the durrency pipes 
+properties.
+  
 
 ## How to Use
 
@@ -11,7 +15,7 @@ npm install ng-currency-formatter
 
 ##### Step 2 - Import in your app module
 ```` Typescript
-import {NgCurrencyFormatter} from 'ng-currency-formatter'
+import {NgCurrencyFormatterModule} from 'ng-currency-formatter'
 
 @NgModule({
   imports: [
@@ -26,7 +30,7 @@ import {NgCurrencyFormatter} from 'ng-currency-formatter'
 ````
 
 ##### Property Binding
-* code - default 'EUR' https://en.wikipedia.org/wiki/ISO_4217
+* code - default 'EUR'
 
 ```` HTML
 <input type="text" ngCurrencyFormatter [code]="'EUR'">
@@ -38,8 +42,9 @@ import {NgCurrencyFormatter} from 'ng-currency-formatter'
 ````
 
 ## Feedback
-This is my first library - small but useful - at least for me =D
-IF you have any suggestions or issues please drop me a message 
+<p>This is my first library - small but useful - at least for me =D</p>
+<p>IF you have any suggestions or issues please drop me a message</p>
+ 
 
 
 

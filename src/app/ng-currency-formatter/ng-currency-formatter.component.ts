@@ -22,8 +22,8 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
   @Input()
   digit = '1.2';
 
-  thousandsSeperator = '.';
-  decimalSeperator = ',';
+  dot = '.';
+  comma = ',';
 
   private onChange: any;
   private onTouched: any;
@@ -56,7 +56,7 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
 
   @HostListener('keyup', ['$event'])
   handleKeyup($event) {
-    const value: number = $event.target.value.replace(this.decimalSeperator, this.thousandsSeperator);
+    const value = $event.target.value.replace(this.comma, this.dot);
     this.value = value;
     this.onChange(value);
   }
@@ -71,20 +71,25 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
     this.transformValue();
   }
 
-  transformValue() {
-    if (this.value != null && this.value !== '' && this.isNumeric(this.value)) {
+  private transformValue() {
+    if (this.isValid(this.value) && this.isNumeric(this.value)) {
       this.elementRef.nativeElement.value = this.currencyPipe.transform(this.value, this.code, 'symbol', this.digit);
     } else {
       this.resetValue();
     }
   }
 
-  resetValue() {
-    this.elementRef.nativeElement.value = this.value;
+  private resetValue() {
+    if (this.isValid(this.value)) {
+      this.elementRef.nativeElement.value = this.value;
+    }
   }
 
-  isNumeric(n) {
+  private isValid(n): boolean {
+    return n !== null && n !== undefined;
+  }
+
+  private isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
   }
-
 }
