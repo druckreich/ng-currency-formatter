@@ -9,6 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "packagr": "ng-packagr -p ng-package.json"
   },
   "private": false,
