@@ -37,7 +37,9 @@ import {NgCurrencyFormatter} from 'ng-currency-formatter'
 <input type="text" ngCurrencyFormatter [digit]="'1.4'">
 ````
 
-
+## Feedback
+This is my first library - small but useful - at least for me =D
+IF you have any suggestions or issues please drop me a message 
 
 
 
