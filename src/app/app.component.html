@@ -1,10 +1,20 @@
+<h1>ng-currency-formatter</h1>
+
+<pre>
+  $lt;input type="text" name="value" ngCurrencyFormatter [(ngModel)]="value"&gt;
+</pre>
+<div>
+  <input type="text" name="value" ngCurrencyFormatter [(ngModel)]="value">
+</div>
+
+<pre>
+  $lt;input type="text" name="value" ngCurrencyFormatter [code]="'US'" [digit]="'1.4'" [(ngModel)]="value"&gt;
+</pre>
 <div>
   <input type="text" name="value" ngCurrencyFormatter [code]="'US'" [digit]="'1.4'" [(ngModel)]="value">
 </div>
-<div>
-  <input type="text" name="value" ngCurrencyFormatter [code]="'US'" [digit]="'1.4'" [(ngModel)]="value">
-</div>
-<pre>{{ value }}</pre>
+
+<pre>model value: {{ value }}</pre>
 
 
 
