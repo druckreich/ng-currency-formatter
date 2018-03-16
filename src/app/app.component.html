@@ -1,20 +1,33 @@
-<h1>ng-currency-formatter</h1>
+<div class="container-fluid">
+  <h2>ng-currency-formatter</h2>
+  <hr>
 
-<pre>
-  $lt;input type="text" name="value" ngCurrencyFormatter [(ngModel)]="value"&gt;
-</pre>
-<div>
-  <input type="text" name="value" ngCurrencyFormatter [(ngModel)]="value">
+  <pre>
+    &lt;input type="text" name="value" ngCurrencyFormatter [(ngModel)]="value"&gt;
+  </pre>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="value" ngCurrencyFormatter [(ngModel)]="value1">
+  </div>
+
+  <pre>
+    model value: {{ value1 }}
+  </pre>
+
+  <hr>
+
+  <pre>
+    &lt;input type="text" name="value" ngCurrencyFormatter [code]="'US'" [digit]="'1.4'" [(ngModel)]="value"&gt;
+  </pre>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="value" ngCurrencyFormatter [code]="'US'" [digit]="'1.4'"
+           [(ngModel)]="value2">
+  </div>
+
+  <pre>
+    model value: {{ value2 }}
+  </pre>
 </div>
-
-<pre>
-  $lt;input type="text" name="value" ngCurrencyFormatter [code]="'US'" [digit]="'1.4'" [(ngModel)]="value"&gt;
-</pre>
-<div>
-  <input type="text" name="value" ngCurrencyFormatter [code]="'US'" [digit]="'1.4'" [(ngModel)]="value">
-</div>
-
-<pre>model value: {{ value }}</pre>
-
 
 

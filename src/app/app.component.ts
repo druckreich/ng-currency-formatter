@@ -5,16 +5,8 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  value = 0;
+export class AppComponent {
+  value1 = 3.14159265359;
+  value2 = 3.14159265359;
 
-  ngOnInit() {
-    setTimeout(() => {
-      this.value = 0;
-    }, 500);
-  }
-
-  handleSubmit(value: any) {
-    console.log(value);
-  }
 }
