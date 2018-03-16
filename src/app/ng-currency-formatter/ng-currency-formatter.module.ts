@@ -2,7 +2,7 @@ import {CommonModule, CurrencyPipe} from '@angular/common';
 import {NgModule, ModuleWithProviders} from '@angular/core';
 import {NgCurrencyConfig} from './ng-currency';
 import {NgCurrencyFormatterComponent} from './ng-currency-formatter.component';
-import {NgCurrencyValidatorDirective} from './ng-currency-validator.directive';
+import {NgNumberValidatorDirective} from './ng-number-validator.directive';
 
 @NgModule({
   imports: [
@@ -10,11 +10,11 @@ import {NgCurrencyValidatorDirective} from './ng-currency-validator.directive';
   ],
   declarations: [
     NgCurrencyFormatterComponent,
-    NgCurrencyValidatorDirective
+    NgNumberValidatorDirective
   ],
   exports: [
     NgCurrencyFormatterComponent,
-    NgCurrencyValidatorDirective
+    NgNumberValidatorDirective
   ],
   providers: [
     CurrencyPipe

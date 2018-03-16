@@ -17,16 +17,16 @@ function validateNumberFactory(config: NgCurrencyConfig) {
 }
 
 @Directive({
-  selector: '[ngCurrencyValidator][ngModel]',
+  selector: '[ngNumberValidator][ngModel]',
   providers: [
     {
       provide: NG_VALIDATORS,
-      useExisting: forwardRef(() => NgCurrencyValidatorDirective),
+      useExisting: forwardRef(() => NgNumberValidatorDirective),
       multi: true
     }
   ]
 })
-export class NgCurrencyValidatorDirective implements Validator {
+export class NgNumberValidatorDirective implements Validator {
 
   validator: Function;
 
