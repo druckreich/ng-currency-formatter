@@ -7,7 +7,7 @@ properties.
   
 
 ### Demo 
-https://stackblitz.com/edit/ng-currency-formatter
+https://druckreich.github.io/ng-currency-formatter
 
 ## How to Use
 
