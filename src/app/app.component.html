@@ -1,6 +1,8 @@
 <div class="container-fluid">
-  <h2>ng-currency-formatter</h2>
-  <hr>
+  <div class="jumbotron"><h1>How to user ngCurrencyFormatterModule</h1></div>
+
+  <h4>How to use ngCurrencyFormatter</h4>
+  <br>
 
   <pre>
     &lt;input type="text" name="value" ngCurrencyFormatter [(ngModel)]="value"&gt;
@@ -16,6 +18,9 @@
 
   <hr>
 
+  <h4>How to use ngCurrencyFormatter with properties</h4>
+  <br>
+
   <pre>
     &lt;input type="text" name="value" ngCurrencyFormatter [code]="'US'" [digit]="'1.4'" [(ngModel)]="value"&gt;
   </pre>
@@ -28,6 +33,32 @@
   <pre>
     model value: {{ value2 }}
   </pre>
+
+  <hr>
+
+  <h4>How to use ngCurrencyValidator</h4>
+  <br>
+  <pre>
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;value&quot; ngCurrencyFormatter ngCurrencyValidator [code]=&quot;'US'&quot; [digit]=&quot;'1.4'&quot; [(ngModel)]=&quot;value3&quot; #value3Input=&quot;ngModel&quot;&gt;
+    &lt;div class=&quot;has-danger&quot; *ngIf=&quot;value3Input.invalid && (value3Input.dirty || value3Input.touched)&quot;&gt;
+      This is not a valid number
+    &lt;/div&gt;
+  </pre>
+
+  <div class="form-group" >
+    <input type="text" class="form-control" name="value" ngCurrencyFormatter ngCurrencyValidator [code]="'US'" [digit]="'1.4'"
+           [(ngModel)]="value3" #value3Input="ngModel">
+    <div class="text-danger" *ngIf="value3Input.invalid && (value3Input.dirty || value3Input.touched)">
+      {{value3Input.errors}}
+    </div>
+  </div>
+
+  <pre>
+    model value: {{ value3 }}
+    control valid: {{ value3Input.valid}}
+    control error: {{ value3Input.errors | json}}
+  </pre>
+
 </div>
 
 

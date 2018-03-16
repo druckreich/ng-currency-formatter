@@ -11,12 +11,12 @@ https://druckreich.github.io/ng-currency-formatter
 
 ## How to Use
 
-##### Step 1 - npm install
+##### How to install dependencies
 ```` Bash
 npm install ng-currency-formatter
 ````
 
-##### Step 2 - Import in your app module
+##### How to import Module
 ```` Typescript
 import {NgCurrencyFormatterModule} from 'ng-currency-formatter'
 
@@ -27,22 +27,36 @@ import {NgCurrencyFormatterModule} from 'ng-currency-formatter'
 })
 ````
 
-##### Step 3 - Add as attribute to your component
+##### How to use formatter on input
 ```` HTML
-<input type="text" ngCurrencyFormatter>
+<input type="text" ngCurrencyFormatter [(ngModel)]="value">
 ````
 
-##### Property Binding
-* code - default 'EUR'
+##### How to use different locale and digit
 
 ```` HTML
 <input type="text" ngCurrencyFormatter [code]="'EUR'">
 ````
 
-* digit - default '1.2'
 ```` Code
 <input type="text" ngCurrencyFormatter [digit]="'1.4'">
 ````
+
+
+##### How to use validator on input
+```` HTML
+<input type="text" ngCurrencyFormatter [(ngModel)]="value" ngCurrencyValidator>
+````
+
+##### How to use custom validator error message
+```` Typescript
+@NgModule({
+  providers: [
+    {provide: 'ngCurrencyConfig', useValue: {message: 'I do not like this number, Sir!'}},
+  ]
+})
+````
+
 
 ## Feedback
 <p>This is my first library - small but useful - at least for me =D</p>

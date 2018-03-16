@@ -1,18 +1,18 @@
 import {CurrencyPipe} from '@angular/common';
 import {Component, ElementRef, forwardRef, HostListener, Input, OnInit} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {NgCurrency} from './ng-currency';
 
-export const CURRENCY_FORMATTER__VALUE_ACCESSOR: any = {
+export const CURRENCY_FORMATTER_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => NgCurrencyFormatterComponent),
   multi: true,
 };
 
 @Component({
-  selector: '[ngCurrencyFormatter]',
-  templateUrl: './ng-currency-formatter.component.html',
-  styleUrls: ['./ng-currency-formatter.component.css'],
-  providers: [CURRENCY_FORMATTER__VALUE_ACCESSOR]
+  selector: '[ngCurrencyFormatter][ngModel]',
+  template: '',
+  providers: [CURRENCY_FORMATTER_VALUE_ACCESSOR]
 })
 export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnInit {
 
@@ -72,7 +72,7 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
   }
 
   private transformValue() {
-    if (this.isValid(this.value) && this.isNumeric(this.value)) {
+    if (NgCurrency.isValid(this.value) && NgCurrency.isNumeric(this.value)) {
       this.elementRef.nativeElement.value = this.currencyPipe.transform(this.value, this.code, 'symbol', this.digit);
     } else {
       this.resetValue();
@@ -80,16 +80,8 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
   }
 
   private resetValue() {
-    if (this.isValid(this.value)) {
+    if (NgCurrency.isValid(this.value)) {
       this.elementRef.nativeElement.value = this.value;
     }
-  }
-
-  private isValid(n): boolean {
-    return n !== null && n !== undefined;
-  }
-
-  private isNumeric(n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
   }
 }
