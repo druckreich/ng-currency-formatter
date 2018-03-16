@@ -15,7 +15,7 @@ registerLocaleData(localeDe, 'de-DE');
   imports: [
     BrowserModule,
     FormsModule,
-    NgCurrencyFormatterModule.forRoot()
+    NgCurrencyFormatterModule.forRoot(null)
   ],
   exports: [],
   providers: [

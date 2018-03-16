@@ -22,12 +22,9 @@ import {NgNumberValidatorDirective} from './ng-number-validator.directive';
 })
 export class NgCurrencyFormatterModule {
   static forRoot(config: NgCurrencyConfig = null): ModuleWithProviders {
-    if (config == null) {
-      config = {message: 'This is not a valid number'};
-    }
     return {
       ngModule: NgCurrencyFormatterModule,
-      providers: [{provide: 'ngCurrencyConfig', useValue: config}]
+      providers: [{provide: 'ngCurrencyConfig', useValue: config ? config : {message: 'This is not a valid number'}}]
     };
   }
 }
