@@ -59,6 +59,7 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
     const value = $event.target.value.replace(this.comma, this.dot);
     this.value = value;
     this.onChange(value);
+    this.onTouched();
   }
 
   @HostListener('focus')
