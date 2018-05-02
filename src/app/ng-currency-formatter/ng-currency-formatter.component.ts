@@ -1,5 +1,5 @@
 import {CurrencyPipe} from '@angular/common';
-import {Component, ElementRef, forwardRef, HostListener, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, forwardRef, HostListener, Input, OnInit, Renderer2} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {NgCurrency} from './ng-currency';
 
@@ -30,7 +30,7 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
 
   private value: any;
 
-  constructor(private elementRef: ElementRef, private currencyPipe: CurrencyPipe) {
+  constructor(private renderer:Renderer2, private elementRef: ElementRef, private currencyPipe: CurrencyPipe) {
   }
 
   ngOnInit() {
