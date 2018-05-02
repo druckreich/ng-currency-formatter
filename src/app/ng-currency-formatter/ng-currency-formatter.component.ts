@@ -50,8 +50,8 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
     this.onTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-
+  setDisabledState(isDisabled: boolean): void {
+    this.renderer.setProperty(this.elementRef.nativeElement, 'disabled', isDisabled);
   }
 
   @HostListener('keyup', ['$event'])
