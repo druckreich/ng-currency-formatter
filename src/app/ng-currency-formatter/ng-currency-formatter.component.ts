@@ -30,7 +30,7 @@ export class NgCurrencyFormatterComponent implements ControlValueAccessor, OnIni
 
   private value: any;
 
-  constructor(private renderer: Renderer2, private elementRef: ElementRef, private currencyPipe: CurrencyPipe) {
+  constructor(public elementRef: ElementRef, private renderer: Renderer2, private currencyPipe: CurrencyPipe) {
   }
 
   ngOnInit() {
